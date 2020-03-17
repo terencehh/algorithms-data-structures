@@ -92,7 +92,7 @@ MinStack.prototype.pop = function() {
       this.downsize
       this.len /= 2
     }
-    item = this.stack[this.top]
+    item = this.stack[this.top_index]
     this.top_index -= 1
     this.count -= 1
     return item
