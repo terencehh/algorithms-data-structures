@@ -6,6 +6,8 @@ def partition(alist, first, last):
     RBAD = last - 1
 
     # continue until pointers cross
+    # we want to ensure all smaller elements are left of pivot
+    # and all larger elements are right of pivot
     while LBAD <= RBAD:
 
         # move LBAD right until it points to a bad element or crosses RBAD
@@ -19,14 +21,14 @@ def partition(alist, first, last):
         # only swap if they have not crossed
         if LBAD <= RBAD:
             alist[LBAD],alist[RBAD] = alist[RBAD],alist[LBAD]
-    
+
     # if crossed, swap element at RBAD with element at pivot
     alist[first],alist[RBAD] = alist[RBAD],alist[first]
 
     return RBAD # return pivot position after partitioning
 
 def quickSort(alist, first, last):
-    
+
     # sort only if the list contains at least two elements
     if (last - first) > 1:
 
